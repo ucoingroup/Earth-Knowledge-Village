@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌍 地球知识村 | Earth Knowledge Village | EACO</title>
+<meta name="description" content="地球知识村 — 人文+地理+设计+经济+历史+哲学+商业+军事+政治+太空星际文明科幻，全球视野新三观">
+<meta name="keywords" content="EACO,地球知识村,Earth Knowledge Village,WEB3,Solana,华商,海外华人,星际文明">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>">
+<style>
+:root{--pri:#0a0e1a;--sec:#111827;--acc:#1e3a5f;--hi:#e94560;--gold:#f5c518;--cyan:#00d2ff;--txt:#e5e7eb;--dim:#9ca3af;--card:rgba(17,24,39,0.88);--glass:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08)}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--pri);color:var(--txt);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--sec)}::-webkit-scrollbar-thumb{background:var(--acc);border-radius:3px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,14,26,0.94);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-size:1.2rem;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:6px;cursor:pointer}
+.nav-logo span{font-size:1.5rem}
+.nav-center{display:flex;gap:1.2rem;list-style:none}
+.nav-center a{color:var(--dim);font-size:.82rem;cursor:pointer;padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+.nav-center a:hover,.nav-center a.active{color:var(--gold);border-bottom-color:var(--gold)}
+.lang-sw{display:flex;gap:3px}
+.lang-sw button{background:var(--glass);border:1px solid var(--border);color:var(--dim);padding:3px 8px;border-radius:4px;cursor:pointer;font-size:.72rem;transition:.2s}
+.lang-sw button:hover,.lang-sw button.on{background:var(--acc);color:#fff}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:5rem 2rem 3rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 20%,rgba(30,58,95,0.5) 0%,transparent 70%)}
+.stars{position:absolute;inset:0;overflow:hidden}
+.star{position:absolute;background:#fff;border-radius:50%;animation:twinkle var(--d,3s) infinite}
+@keyframes twinkle{0%,100%{opacity:.2}50%{opacity:1}}
+.hero-t{font-size:clamp(2.2rem,6vw,4.8rem);font-weight:900;line-height:1.05;position:relative;background:linear-gradient(135deg,var(--gold),#ff6b6b,var(--cyan),var(--gold));background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradShift 8s ease infinite}
+@keyframes gradShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero-s{font-size:clamp(.95rem,2vw,1.3rem);color:var(--dim);margin-top:1rem;max-width:800px;position:relative}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin-top:1.5rem;position:relative}
+.htag{background:rgba(233,69,96,0.12);color:var(--hi);padding:4px 14px;border-radius:20px;font-size:.8rem;border:1px solid rgba(233,69,96,0.2)}
+.hero-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.2rem;margin-top:2.5rem;width:100%;max-width:900px;position:relative}
+.st{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.2rem;text-align:center;backdrop-filter:blur(10px);transition:transform .2s}
+.st:hover{transform:translateY(-4px)}
+.st-n{font-size:1.8rem;font-weight:800;background:linear-gradient(135deg,var(--gold),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.st-l{font-size:.8rem;color:var(--dim);margin-top:2px}
+
+/* SECTIONS */
+.sec{padding:4rem 2rem;max-width:1200px;margin:0 auto}
+.sec-t{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;margin-bottom:.3rem;display:flex;align-items:center;gap:8px}
+.sec-d{color:var(--dim);margin-bottom:2rem;max-width:750px;font-size:.95rem}
+
+/* CARDS */
+.g3{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.2rem}
+.g4{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.g2{display:grid;grid-template-columns:repeat(auto-fill,minmax(400px,1fr));gap:1.2rem}
+.cd{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem;backdrop-filter:blur(8px);transition:.25s}
+.cd:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 25px rgba(233,69,96,0.1)}
+.cd-h{display:flex;align-items:center;gap:8px;margin-bottom:.8rem}
+.cd-i{font-size:1.8rem}
+.cd-t{font-size:1.05rem;font-weight:600}
+.cd-b{font-size:.88rem;color:var(--dim);line-height:1.6}
+.tag{display:inline-block;background:rgba(233,69,96,0.12);color:var(--hi);padding:2px 10px;border-radius:20px;font-size:.72rem;margin-top:6px;margin-right:3px}
+.tag-g{background:rgba(245,197,24,0.12);color:var(--gold)}
+.link{display:inline-block;margin-top:8px;color:var(--gold);font-size:.82rem;border-bottom:1px dashed var(--gold)}.link:hover{border-style:solid}
+
+/* NINE DISCIPLINES */
+.disc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.8rem;margin-top:1.5rem}
+.disc-item{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1rem;text-align:center;cursor:pointer;transition:.25s;position:relative;overflow:hidden}
+.disc-item:hover{border-color:var(--gold);transform:scale(1.05)}
+.disc-item::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(245,197,24,0.05));pointer-events:none}
+.disc-icon{font-size:2rem;margin-bottom:4px}
+.disc-name{font-size:.88rem;font-weight:600}
+.disc-en{font-size:.7rem;color:var(--dim)}
+
+/* ALLOC */
+.alloc{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem;margin-top:1.2rem}
+.alloc-i{background:var(--glass);border:1px solid var(--border);border-radius:10px;padding:1.1rem;position:relative;overflow:hidden}
+.alloc-bar{height:5px;background:rgba(255,255,255,0.08);border-radius:3px;margin-top:6px;overflow:hidden}
+.alloc-fill{height:100%;border-radius:3px;transition:width 1.2s ease}
+.alloc-n{font-weight:600;font-size:.9rem}
+.alloc-a{font-size:.78rem;color:var(--dim);margin-top:2px}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:2rem;margin-top:1.5rem}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--hi),var(--gold),var(--cyan),#a78bfa)}
+.tl-i{position:relative;margin-bottom:1.8rem;padding-left:1.8rem}
+.tl-i::before{content:'';position:absolute;left:-1.5rem;top:6px;width:12px;height:12px;border-radius:50%;border:2px solid var(--gold);background:var(--pri);z-index:1;transition:.2s}
+.tl-i:hover::before{background:var(--gold);box-shadow:0 0 12px var(--gold)}
+.tl-era{font-size:.75rem;color:var(--hi);font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.tl-t{font-size:1.05rem;font-weight:600;margin:3px 0}
+.tl-d{font-size:.85rem;color:var(--dim);line-height:1.5}
+.tl-s{font-style:italic;color:var(--gold);font-size:.82rem;margin-top:4px}
+
+/* COUNTRY TABLE */
+.tbl{width:100%;border-collapse:collapse;margin-top:1rem;font-size:.88rem}
+.tbl th{text-align:left;padding:8px 10px;background:var(--acc);color:var(--gold);font-size:.8rem;font-weight:600;position:sticky;top:56px}
+.tbl td{padding:8px 10px;border-bottom:1px solid var(--border)}
+.tbl tr:hover td{background:rgba(255,255,255,0.02)}
+.flg{font-size:1.2rem;margin-right:4px}
+
+/* HERITAGE */
+.her{background:linear-gradient(135deg,rgba(233,69,96,0.06),rgba(245,197,24,0.04));border-radius:14px;padding:2rem;margin:1.5rem 0}
+.her-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem;margin-top:1.2rem}
+.her-c{background:var(--card);border-left:3px solid var(--hi);border-radius:0 8px 8px 0;padding:1rem}
+.her-c h4{color:var(--hi);margin-bottom:4px;font-size:.95rem}
+.her-c p{font-size:.85rem;color:var(--dim);line-height:1.5}
+
+/* UPDATE NOTICE */
+.upd{background:rgba(0,210,255,0.08);border:1px solid rgba(0,210,255,0.15);border-radius:8px;padding:8px 14px;font-size:.78rem;color:#8ed8f8;display:flex;align-items:center;gap:6px;margin-bottom:1.2rem}
+
+/* BADGE */
+.badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,var(--hi),#ff8a5c);padding:3px 12px;border-radius:20px;font-size:.75rem;font-weight:600;color:#fff}
+
+/* FOOTER */
+.ft{text-align:center;padding:2.5rem 2rem;border-top:1px solid var(--border);color:var(--dim);font-size:.82rem}
+.ft a{color:var(--gold)}
+
+/* QUANTUM GENESIS */
+.qg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.8rem;margin-top:1.2rem}
+.qg-item{background:var(--glass);border:1px solid var(--border);border-radius:8px;padding:.8rem;text-align:center;transition:.2s}
+.qg-item:hover{border-color:var(--cyan);background:rgba(0,210,255,0.05)}
+.qg-num{font-size:1.5rem;font-weight:800;color:var(--cyan)}
+.qg-name{font-size:.85rem;font-weight:500;margin-top:2px}
+.qg-en{font-size:.7rem;color:var(--dim)}
+
+/* RESPONSIVE */
+@media(max-width:768px){.nav-center{display:none}.hero-stats{grid-template-columns:repeat(2,1fr)}.g3,.g4,.g2{grid-template-columns:1fr}.disc-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* SCROLL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(30px);transition:.6s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo" onclick="scrollTo('home')"><span>🌍</span> 地球知识村</div>
+  <ul class="nav-center">
+    <li><a class="active" onclick="scrollTo('home')">首页</a></li>
+    <li><a onclick="scrollTo('disc')">九大学科</a></li>
+    <li><a onclick="scrollTo('eaco')">EACO生态</a></li>
+    <li><a onclick="scrollTo('heritage')">华文传承</a></li>
+    <li><a onclick="scrollTo('countries')">全球华商</a></li>
+    <li><a onclick="scrollTo('quantum')">量子创世</a></li>
+    <li><a onclick="scrollTo('civ')">文明进化</a></li>
+  </ul>
+  <div class="lang-sw">
+    <button class="on" onclick="setLang('zh')">中</button>
+    <button onclick="setLang('en')">EN</button>
+    <button onclick="setLang('es')">ES</button>
+    <button onclick="setLang('fr')">FR</button>
+    <button onclick="setLang('ru')">RU</button>
+    <button onclick="setLang('ar')">AR</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="stars" id="stars"></div>
+  <h1 class="hero-t">🌍 地球知识村</h1>
+  <p class="hero-s">人文+地理+设计+经济+历史+哲学+商业+军事+政治+太空星际文明科幻，全球视野新三观</p>
+  <div class="hero-tags">
+    <span class="htag">🌏 人文地理</span><span class="htag">📐 设计经济</span><span class="htag">📜 历史哲学</span>
+    <span class="htag">💼 商业军事</span><span class="htag">🏛️ 政治治理</span><span class="htag">🚀 星际文明</span>
+    <span class="htag">🪙 EACO $e</span><span class="htag">🌐 全球视野新三观</span>
+  </div>
+  <div class="hero-stats">
+    <div class="st"><div class="st-n">5000万+</div><div class="st-l">海外华人</div></div>
+    <div class="st"><div class="st-n">20+</div><div class="st-l">华商聚集国</div></div>
+    <div class="st"><div class="st-n">6</div><div class="st-l">联合国官方语言</div></div>
+    <div class="st"><div class="st-n">9</div><div class="st-l">核心学科维度</div></div>
+    <div class="st"><div class="st-n">13.5亿</div><div class="st-l">EACO总量</div></div>
+    <div class="st"><div class="st-n">1亿年</div><div class="st-l">文明进化尺度</div></div>
+  </div>
+</section>
+
+<!-- NINE DISCIPLINES -->
+<section class="sec" id="disc">
+  <h2 class="sec-t">🌐 全球视野新三观 · 九大学科</h2>
+  <p class="sec-d">地球知识村以九大学科构建全球视野新三观，从人文到星际，从历史到未来，重新定义"看见世界"的方式。</p>
+  <div class="disc-grid">
+    <div class="disc-item" onclick="scrollTo('heritage')"><div class="disc-icon">📖</div><div class="disc-name">人文</div><div class="disc-en">Humanities</div></div>
+    <div class="disc-item"><div class="disc-icon">🌏</div><div class="disc-name">地理</div><div class="disc-en">Geography</div></div>
+    <div class="disc-item"><div class="disc-icon">📐</div><div class="disc-name">设计</div><div class="disc-en">Design</div></div>
+    <div class="disc-item" onclick="scrollTo('eaco')"><div class="disc-icon">💰</div><div class="disc-name">经济</div><div class="disc-en">Economics</div></div>
+    <div class="disc-item" onclick="scrollTo('heritage')"><div class="disc-icon">📜</div><div class="disc-name">历史</div><div class="disc-en">History</div></div>
+    <div class="disc-item"><div class="disc-icon">🤔</div><div class="disc-name">哲学</div><div class="disc-en">Philosophy</div></div>
+    <div class="disc-item" onclick="scrollTo('countries')"><div class="disc-icon">💼</div><div class="disc-name">商业</div><div class="disc-en">Business</div></div>
+    <div class="disc-item"><div class="disc-icon">⚔️</div><div class="disc-name">军事</div><div class="disc-en">Military</div></div>
+    <div class="disc-item"><div class="disc-icon">🏛️</div><div class="disc-name">政治</div><div class="disc-en">Politics</div></div>
+    <div class="disc-item" onclick="scrollTo('civ')"><div class="disc-icon">🚀</div><div class="disc-name">星际文明</div><div class="disc-en">Cosmic Civilization</div></div>
+  </div>
+</section>
+
+<!-- EACO ECOSYSTEM -->
+<section class="sec" id="eaco">
+  <h2 class="sec-t">🪙 EACO 生态分配</h2>
+  <p class="sec-d">EACO ($e) — Solana链上代币，总量13.5亿枚。61%投入7大核心板块，10%覆盖十大未来行业，剩余用于生态、投资、治理与星际储备。</p>
+  <div class="upd">🔄 数据更新：每日 23:30-03:30 通过全球前10大AI系统免费API额度采集</div>
+
+  <h3 style="margin-bottom:.8rem;font-size:1.1rem">💎 七大核心板块（61%）</h3>
+  <div class="alloc">
+    <div class="alloc-i"><div class="alloc-n">🤖 AI 人工智能</div><div class="alloc-a">13,500万 · e-USDT</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#ff6b6b,#ff8a5c)"></div></div><a class="link" href="https://orbmarkets.io/address/GeF9cBVQm4A15mcBHxcncXWZrojKsn4zgKEXLDYdmEDi" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">🔗 WEB3 / 区块链</div><div class="alloc-a">13,500万 · e-SOL</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#4ecdc4,#44b09e)"></div></div><a class="link" href="https://orbmarkets.io/address/7cmAfsKJrvcbMLWoXDTX5uZ2C8udBjzsKEgaxeweKMMU" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">🏠 RWA 真实世界资产</div><div class="alloc-a">13,500万 · e-USDC</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#a78bfa,#8b5cf6)"></div></div><a class="link" href="https://orbmarkets.io/address/Cm6EkxcYNfvxeYDBQ3TGXFqa9NCWvrFKHz4Cfju91dhr" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">📊 Stocks 股票市场</div><div class="alloc-a">13,500万 · eCNH-e / e-USDC</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#f59e0b,#d97706)"></div></div><a class="link" href="https://orbmarkets.io/address/EeECjxqjUALgDEoT6SW2ebN2RTFvN7ci8S8CMaPrLZHw" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">💎 Majors 主流货币</div><div class="alloc-a">13,500万 · BTC/ETH/BNB/TRX/AVAX</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#3b82f6,#2563eb)"></div></div><a class="link" href="https://orbmarkets.io/address/GeF9cBVQm4A15mcBHxcncXWZrojKsn4zgKEXLDYdmEDi" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">🥇 Commodities 大宗商品</div><div class="alloc-a">13,500万 · 黄金白银</div><div class="alloc-bar"><div class="alloc-fill" style="width:10%;background:linear-gradient(90deg,#ec4899,#db2777)"></div></div><a class="link" href="https://orbmarkets.io/address/5eEa3mJeRELrry3oEtLSAcsJ8PxLtX7pnTpWLLA9xaeV" target="_blank">OrbMarkets →</a></div>
+    <div class="alloc-i"><div class="alloc-n">❤️ 公益慈善</div><div class="alloc-a">1,350万 · WBNB-e</div><div class="alloc-bar"><div class="alloc-fill" style="width:1%;background:linear-gradient(90deg,#10b981,#059669)"></div></div><a class="link" href="https://orbmarkets.io/address/4ELFtiSCM1Ra8yhVFJemnMZPQC2a8yZ3RhSKmckt5Swx" target="_blank">OrbMarkets →</a></div>
+  </div>
+
+  <h3 style="margin-top:2rem;margin-bottom:.8rem;font-size:1.1rem">🏢 十大未来行业（各1,350万枚）</h3>
+  <div class="g4">
+    <div class="cd"><div class="cd-h"><span class="cd-i">🏦</span><span class="cd-t">DeFi</span></div><div class="cd-b">流动性挖矿、借贷协议、收益聚合器</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🎮</span><span class="cd-t">GameFi</span></div><div class="cd-b">游戏经济系统、NFT资产交易、玩家激励</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">💬</span><span class="cd-t">SocialFi</span></div><div class="cd-b">社交代币化、创作者激励、社区治理</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🌐</span><span class="cd-t">元宇宙/NFT</span></div><div class="cd-b">虚拟土地、NFT艺术、元宇宙基建</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🌿</span><span class="cd-t">绿色能源/碳交易</span></div><div class="cd-b">碳信用代币化、可再生能源、ESG投资</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🚚</span><span class="cd-t">供应链金融</span></div><div class="cd-b">供应链透明、中小企业融资、物流追踪</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">📚</span><span class="cd-t">教育科技</span></div><div class="cd-b">在线学习、技能认证上链、教育资源共享</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🏥</span><span class="cd-t">医疗健康</span></div><div class="cd-b">医疗数据安全共享、远程医疗、健康激励</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">📡</span><span class="cd-t">物联网 IoT</span></div><div class="cd-b">设备微支付、数据交易、智能城市</div><span class="tag">1,350万</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🛡️</span><span class="cd-t">可持续发展</span></div><div class="cd-b">跨行业协作、资源优化、价值交换协议</div><span class="tag">1,350万</span><a class="link" href="https://orbmarkets.io/address/4zf3MunNrsfFM4c7pd2G9hBJ5wNofG887XFzMPkWc7Jx" target="_blank">OrbMarkets →</a></div>
+  </div>
+
+  <h3 style="margin-top:2rem;margin-bottom:.8rem;font-size:1.1rem">📋 剩余分配（约29%）</h3>
+  <div class="alloc">
+    <div class="alloc-i"><div class="alloc-n">🎁 初始流通/空投</div><div class="alloc-a">社区建设与早期激励</div></div>
+    <div class="alloc-i"><div class="alloc-n">⛏️ 生态激励/挖矿</div><div class="alloc-a">长期生态贡献奖励</div></div>
+    <div class="alloc-i"><div class="alloc-n">🏛️ 团队&基金会</div><div class="alloc-a">项目开发与运营</div></div>
+    <div class="alloc-i"><div class="alloc-n">💼 投资机构</div><div class="alloc-a">战略合作伙伴</div></div>
+    <div class="alloc-i"><div class="alloc-n">🗳️ 社区金库(DAO)</div><div class="alloc-a">去中心化治理</div></div>
+    <div class="alloc-i"><div class="alloc-n">🚀 战略/星际储备</div><div class="alloc-a">未来文明版本预留</div></div>
+  </div>
+
+  <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:8px">
+    <span class="badge">🔗 Solana SPL</span>
+    <span class="badge">📊 Dqfoy...mHnDHRH</span>
+    <a class="badge" href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" style="text-decoration:none">🔍 OrbMarkets</a>
+    <a class="badge" href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" style="text-decoration:none">🔍 Solscan</a>
+    <a class="badge" href="https://www.oklink.com/solana/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" style="text-decoration:none">🔍 OKLink</a>
+  </div>
+</section>
+
+<!-- CHINESE HERITAGE -->
+<section class="sec" id="heritage">
+  <h2 class="sec-t">📖 海外华文传承：与母语共存亡</h2>
+  <p class="sec-d">5000万海外华人拼死保护中文。语言从来不会自然而然地延续下去，任何一种母语，最终都只能靠使用它的人自己去争取、去保护。</p>
+  
+  <div class="her">
+    <h3 style="color:var(--hi);margin-bottom:.8rem;font-size:1.1rem">🎬 灵感：《给阿嬷的情书》与"下南洋"</h3>
+    <div class="her-grid">
+      <div class="her-c"><h4>🏔️ 林连玉 — "族魂"</h4><p>一生为中文教育合法化奔走，被吊销教师执照、剥夺公民权。马来西亚华教节正是为延续其精神而设。</p></div>
+      <div class="her-c"><h4>👩‍🏫 余佩皋 — 南洋女校创办人</h4><p>1915年南渡办学，1917年创办南洋女子师范学校。因"争人格，反苛例"运动被驱逐出境。</p></div>
+      <div class="her-c"><h4>📚 李春鸣 — 印尼华教火种</h4><p>1939年创办雅加达中华中学，27年培养上万名华侨子弟，被联合国教科文组织誉为东南亚最大华侨中学之一。</p></div>
+      <div class="her-c"><h4>🏛️ 陈嘉庚 — 南洋华侨中学</h4><p>1919年创办东南亚第一所华文中学，至今仍是新加坡最顶尖的老牌华校之一。</p></div>
+      <div class="her-c"><h4>🎓 南洋大学 — 第一所海外中文大学</h4><p>1955年由新马华人共同捐建，办学25年后于1980年关闭。今仅存牌坊，提醒珍惜教育机会。</p></div>
+      <div class="her-c"><h4>🇲🇾 马来西亚华教</h4><p>1301所华小、61所华文独中、3所华文大专，在校生超50万。150年血泪，硬生生撑起完整华文教育体系。</p></div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:1.5rem;margin-bottom:.8rem">📉 关键数据</h3>
+  <div class="g4">
+    <div class="cd"><div class="cd-b" style="text-align:center"><strong style="font-size:1.6rem;color:var(--hi)">70%+</strong><br>南洋华人已不会中文</div></div>
+    <div class="cd"><div class="cd-b" style="text-align:center"><strong style="font-size:1.6rem;color:var(--gold)">30+年</strong><br>印尼华文被封杀时长</div></div>
+    <div class="cd"><div class="cd-b" style="text-align:center"><strong style="font-size:1.6rem;color:#4ecdc4">90%</strong><br>美国华裔为1970后新移民</div></div>
+    <div class="cd"><div class="cd-b" style="text-align:center"><strong style="font-size:1.6rem;color:#a78bfa">1669所</strong><br>1957年印尼华校峰值</div></div>
+  </div>
+
+  <h3 style="margin-top:1.5rem;margin-bottom:.8rem">🌏 EACO如何助力华文传承</h3>
+  <div class="g3">
+    <div class="cd"><div class="cd-h"><span class="cd-i">📚</span><span class="cd-t">教育科技板块</span></div><div class="cd-b">学中文赚EACO，技能认证上链，教育资源跨国共享</div><span class="tag">1,350万枚</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">💬</span><span class="cd-t">SocialFi板块</span></div><div class="cd-b">华文内容创作激励，社区治理保护话语权</div><span class="tag">1,350万枚</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">❤️</span><span class="cd-t">公益慈善板块</span></div><div class="cd-b">华校建设基金、教师培训、教材数字化</div><span class="tag">1,350万枚</span></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🌐</span><span class="cd-t">跨文化DAO</span></div><div class="cd-b">各国华商社区自治，EACO投票决定华教资金</div><span class="tag tag-g">社区金库</span></div>
+  </div>
+</section>
+
+<!-- GLOBAL CHINESE BUSINESS -->
+<section class="sec" id="countries">
+  <h2 class="sec-t">🌏 全球华商20国</h2>
+  <p class="sec-d">覆盖联合国6种官方语言及海外华商最多的20个国家语言</p>
+  <div class="upd">🔄 每日 23:30-03:30 自动更新</div>
+  <div style="overflow-x:auto">
+    <table class="tbl">
+      <thead><tr><th>#</th><th>国家</th><th>华人数量</th><th>官方语言</th><th>华文水平</th><th>EACO市场</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td><span class="flg">🇮🇩</span>印度尼西亚</td><td>~1200万</td><td>印尼语</td><td>⚠️ 大部分已不会</td><td>e-USDT</td></tr>
+        <tr><td>2</td><td><span class="flg">🇹🇭</span>泰国</td><td>~900万</td><td>泰语</td><td>⚠️ 大部分已同化</td><td>e-SOL</td></tr>
+        <tr><td>3</td><td><span class="flg">🇲🇾</span>马来西亚</td><td>~740万</td><td>马来语</td><td>✅ 华文水平最高</td><td>e-USDC</td></tr>
+        <tr><td>4</td><td><span class="flg">🇺🇸</span>美国</td><td>~550万</td><td>英语</td><td>🔄 新移民为主</td><td>e-USDT</td></tr>
+        <tr><td>5</td><td><span class="flg">🇸🇬</span>新加坡</td><td>~300万</td><td>英/中/马/泰</td><td>🔄 第二语言</td><td>e-SOL</td></tr>
+        <tr><td>6</td><td><span class="flg">🇨🇦</span>加拿大</td><td>~191万</td><td>英/法</td><td>🔄 新移民为主</td><td>e-USDC</td></tr>
+        <tr><td>7</td><td><span class="flg">🇲🇲</span>缅甸</td><td>~163万</td><td>缅语</td><td>⚠️ 中等</td><td>e-USDT</td></tr>
+        <tr><td>8</td><td><span class="flg">🇦🇺</span>澳大利亚</td><td>~140万</td><td>英语</td><td>🔄 新移民为主</td><td>e-USDC</td></tr>
+        <tr><td>9</td><td><span class="flg">🇵🇭</span>菲律宾</td><td>~135万</td><td>英/菲</td><td>⚠️ 大部分已不会</td><td>e-USDT</td></tr>
+        <tr><td>10</td><td><span class="flg">🇵🇪</span>秘鲁</td><td>~130万</td><td>西班牙语</td><td>⚠️ 大部分已不会</td><td>e-USDC</td></tr>
+        <tr><td>11</td><td><span class="flg">🇻🇳</span>越南</td><td>~100万</td><td>越南语</td><td>⚠️ 有限</td><td>e-SOL</td></tr>
+        <tr><td>12</td><td><span class="flg">🇫🇷</span>法国</td><td>~80万</td><td>法语</td><td>🔄 新老并存</td><td>e-USDC</td></tr>
+        <tr><td>13</td><td><span class="flg">🇯🇵</span>日本</td><td>~78万</td><td>日语</td><td>🔄 新移民为主</td><td>e-USDT</td></tr>
+        <tr><td>14</td><td><span class="flg">🇬🇧</span>英国</td><td>~70万</td><td>英语</td><td>🔄 新移民为主</td><td>e-USDC</td></tr>
+        <tr><td>15</td><td><span class="flg">🇿🇦</span>南非</td><td>~50万</td><td>英/祖鲁等</td><td>⚠️ 有限</td><td>e-USDT</td></tr>
+        <tr><td>16</td><td><span class="flg">🇰🇷</span>韩国</td><td>~40万</td><td>韩语</td><td>🔄 留学/务工</td><td>e-SOL</td></tr>
+        <tr><td>17</td><td><span class="flg">🇮🇹</span>意大利</td><td>~35万</td><td>意大利语</td><td>⚠️ 温州移民</td><td>e-USDC</td></tr>
+        <tr><td>18</td><td><span class="flg">🇧🇷</span>巴西</td><td>~30万</td><td>葡萄牙语</td><td>⚠️ 有限</td><td>e-USDC</td></tr>
+        <tr><td>19</td><td><span class="flg">🇳🇿</span>新西兰</td><td>~25万</td><td>英/毛利</td><td>🔄 新移民为主</td><td>e-USDC</td></tr>
+        <tr><td>20</td><td><span class="flg">🇦🇪</span>阿联酋</td><td>~22万</td><td>阿拉伯语</td><td>🔄 经商为主</td><td>e-USDT</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- QUANTUM GENESIS -->
+<section class="sec" id="quantum">
+  <h2 class="sec-t">⚛️ 量子创世录</h2>
+  <p class="sec-d">《地球：量子创世录》— EACO: THE QUANTUM GENESIS OF TERRA — 100章星际文明史诗巨作</p>
+
+  <h3 style="margin-bottom:.8rem;font-size:1rem">⭐ 地球前20大宇宙祖星</h3>
+  <div class="qg-grid">
+    <div class="qg-item"><div class="qg-num">1</div><div class="qg-name">天狼星</div><div class="qg-en">Sirius</div></div>
+    <div class="qg-item"><div class="qg-num">2</div><div class="qg-name">织女星</div><div class="qg-en">Vega</div></div>
+    <div class="qg-item"><div class="qg-num">3</div><div class="qg-name">参宿四</div><div class="qg-en">Betelgeuse</div></div>
+    <div class="qg-item"><div class="qg-num">4</div><div class="qg-name">南门二</div><div class="qg-en">Alpha Centauri</div></div>
+    <div class="qg-item"><div class="qg-num">5</div><div class="qg-name">大角星</div><div class="qg-en">Arcturus</div></div>
+    <div class="qg-item"><div class="qg-num">6</div><div class="qg-name">参宿七</div><div class="qg-en">Rigel</div></div>
+    <div class="qg-item"><div class="qg-num">7</div><div class="qg-name">天津四</div><div class="qg-en">Deneb</div></div>
+    <div class="qg-item"><div class="qg-num">8</div><div class="qg-name">北河三</div><div class="qg-en">Pollux</div></div>
+    <div class="qg-item"><div class="qg-num">9</div><div class="qg-name">牛郎星</div><div class="qg-en">Altair</div></div>
+    <div class="qg-item"><div class="qg-num">10</div><div class="qg-name">心宿二</div><div class="qg-en">Antares</div></div>
+    <div class="qg-item"><div class="qg-num">11</div><div class="qg-name">角宿一</div><div class="qg-en">Spica</div></div>
+    <div class="qg-item"><div class="qg-num">12</div><div class="qg-name">五车二</div><div class="qg-en">Capella</div></div>
+    <div class="qg-item"><div class="qg-num">13</div><div class="qg-name">北极星</div><div class="qg-en">Polaris</div></div>
+    <div class="qg-item"><div class="qg-num">14</div><div class="qg-name">毕宿五</div><div class="qg-en">Aldebaran</div></div>
+    <div class="qg-item"><div class="qg-num">15</div><div class="qg-name">南河三</div><div class="qg-en">Procyon</div></div>
+    <div class="qg-item"><div class="qg-num">16</div><div class="qg-name">轩辕十四</div><div class="qg-en">Regulus</div></div>
+    <div class="qg-item"><div class="qg-num">17</div><div class="qg-name">北河二</div><div class="qg-en">Castor</div></div>
+    <div class="qg-item"><div class="qg-num">18</div><div class="qg-name">天枢</div><div class="qg-en">Dubhe</div></div>
+    <div class="qg-item"><div class="qg-num">19</div><div class="qg-name">尾宿八</div><div class="qg-en">Shaula</div></div>
+    <div class="qg-item"><div class="qg-num">20</div><div class="qg-name">室女座61</div><div class="qg-en">61 Virginis</div></div>
+  </div>
+
+  <h3 style="margin-top:1.5rem;margin-bottom:.8rem;font-size:1rem">🚪 地球前10大星门</h3>
+  <div class="g4">
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">天狼之门</strong><br>撒哈拉深处</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">昆仑之门</strong><br>青藏高原核心</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">亚特兰蒂斯之门</strong><br>大西洋海底</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">极光之门</strong><br>北极冰层之下</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">玛雅之门</strong><br>尤卡坦半岛地下</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">须弥之门</strong><br>喜马拉雅山脉隐域</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">南十字之门</strong><br>南极洲冰盖深处</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">巨石之门</strong><br>巨石阵能量节点</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">太平洋之门</strong><br>马里亚纳海沟</div></div>
+    <div class="cd"><div class="cd-b"><strong style="color:var(--cyan)">创世之门</strong><br>地核最深层</div></div>
+  </div>
+
+  <h3 style="margin-top:1.5rem;margin-bottom:.8rem;font-size:1rem">📖 100章目录精选</h3>
+  <div class="g3">
+    <div class="cd"><div class="cd-h"><span class="cd-i">🌅</span><span class="cd-t">起源篇 (1-10)</span></div><div class="cd-b">创世量子觉醒 → 天狼星信使 → 二十祖星议会 → 第一道星门 → 创世密码 → 昆仑高维遗迹 → 亚特兰蒂斯遗产 → 能量门共振 → DNA星际密码 → EACO协议播种</div></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">👁️</span><span class="cd-t">觉醒篇 (11-20)</span></div><div class="cd-b">量子纠缠网络 → 地球资源量化 → 去中心化黎明 → AI数字意识觉醒 → WEB3信任重建 → RWA链上映射 → 利他经济学 → 四层资源网络 → 正能量方程 E=A×C×O → 星际拓荒者集结</div></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🚀</span><span class="cd-t">拓展篇 (21-30)</span></div><div class="cd-b">太空电梯 → 月球EACO结算 → 火星前哨站 → 可控核聚变 → 星际贸易航线 → 十大行业星际化 → 太空DeFi → GameFi虚实融合 → 碳信用代币修复火星 → 供应链星际革命</div></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🌱</span><span class="cd-t">改造篇 (31-40)</span></div><div class="cd-b">基因微调 → 行星改造 → 跨星球生态DAO → 生物多样性星际保护 → 海洋星球 → 银河碳交易 → 跨星球教育 → 基因编辑伦理 → 万亿传感器IoT → EACO百年回顾</div></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">🧠</span><span class="cd-t">神经篇 (41-50)</span></div><div class="cd-b">脑机接口意识上传 → 数字分身经济体 → 意识EACO交易 → 心灵SocialFi → 集体意识涌现 → 数字分身权利 → 虚实彻底融合 → NFT意识碎片 → 千亿平行现实 → EACO 2.0意识标准</div></div>
+    <div class="cd"><div class="cd-h"><span class="cd-i">☀️</span><span class="cd-t">恒星篇 (51-60)</span></div><div class="cd-b">戴森球启动 → 恒星能量收割 → 亚光速引擎 → 星际物流 → 太阳系通证化 → 能量配额期货 → 大宗商品星际化 → 股票跨星系 → 拯救垂死恒星 → 恒星DAO治理</div></div>
+  </div>
+</section>
+
+<!-- CIVILIZATION EVOLUTION -->
+<section class="sec" id="civ">
+  <h2 class="sec-t">🚀 EACO 文明进化图谱</h2>
+  <p class="sec-d">EACO 不是百年级别的东西，它是从100年到1亿年的文明通道。</p>
+  <div class="tl">
+    <div class="tl-i"><div class="tl-era">≈ 100年后</div><div class="tl-t">1.0 星际拓荒</div><div class="tl-d">可控核聚变 + 太空电梯 → EACO 成为近地轨道经济结算层</div><div class="tl-s">→ EACO 是月球与火星的第一笔交易结算。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 400-500年后</div><div class="tl-t">2.0 生态共生</div><div class="tl-d">基因微调 + 行星改造 → 跨星球碳信用与生态修复 DAO</div><div class="tl-s">→ EACO 为跨星球生态修复发工资。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 1000年后</div><div class="tl-t">3.0 脑机共生</div><div class="tl-d">脑机接口 + 数字分身 → 意识与数据市场基础货币</div><div class="tl-s">→ 你的数字分身靠 EACO 养活自己。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 5000年后</div><div class="tl-t">4.0 恒星能源主宰</div><div class="tl-d">戴森球雏形 + 亚光速航运 → 恒星能量配额与星际物流期货</div><div class="tl-s">→ 戴森球的一度电，用 EACO 买。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 2万年后</div><div class="tl-t">5.0 银河殖民</div><div class="tl-d">曲速航行 + 多行星文明 → 银河文明储备币</div><div class="tl-s">→ 从猎户座到半人马座，只认 EACO。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 10万年后</div><div class="tl-t">6.0 维度认知觉醒</div><div class="tl-d">高维空间映射 + 平行宇宙观测 → 跨维度信息交换公证层</div><div class="tl-s">→ 跨平行宇宙的信息税，EACO 付。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 50万年后</div><div class="tl-t">7.0 数字永恒</div><div class="tl-d">意识完整数字化 → 意识备份与星际复活的经济燃料</div><div class="tl-s">→ 复活一个人的记忆，先烧 EACO。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 100万年后</div><div class="tl-t">8.0 宇宙文明融合</div><div class="tl-d">与高等级外星文明共享物理规律 → 文明间通用价值协议</div><div class="tl-s">→ 外星人也用 EACO 签和平协议。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 1000万年后</div><div class="tl-t">9.0 规则缔造者</div><div class="tl-d">调整基本常数、修复时空损伤 → 宇宙工程治理投票</div><div class="tl-s">→ 改一个物理常数，投 EACO 表决。</div></div>
+    <div class="tl-i"><div class="tl-era">≈ 1亿年后</div><div class="tl-t">10.0 终极宇宙生命</div><div class="tl-d">纯能量/意识形态 → EACO = 宇宙意识的自我表达</div><div class="tl-s">→ 到那一天，EACO = 宇宙的自我心跳。</div></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <p>🌍 地球知识村 · Earth Knowledge Village · EACO ($e) · earth's best coin</p>
+  <p style="margin-top:6px">人文+地理+设计+经济+历史+哲学+商业+军事+政治+太空星际文明科幻，全球视野新三观</p>
+  <p style="margin-top:6px">Solana: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH | 总量: 13.5亿</p>
+  <p style="margin-top:6px">
+    <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">OrbMarkets</a> · 
+    <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">Solscan</a> · 
+    <a href="https://www.oklink.com/solana/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">OKLink</a>
+  </p>
+  <p style="margin-top:6px;color:#555">© 2025-2026 Earth Knowledge Village. EACO — 从100年到1亿年的文明通道。</p>
+</footer>
+
+<script>
+// Stars
+const sc=document.getElementById('stars');
+for(let i=0;i<120;i++){const s=document.createElement('div');s.className='star';const sz=Math.random()*2+1;s.style.cssText=`width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${Math.random()*4+2}s;animation-delay:${Math.random()*4}s`;sc.appendChild(s)}
+
+// Nav
+function scrollTo(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+const sections=document.querySelectorAll('.sec,.hero');
+const navLinks=document.querySelectorAll('.nav-center a');
+window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-100)cur=s.id});navLinks.forEach(a=>{a.classList.toggle('active',a.getAttribute('onclick')?.includes(cur))})});
+
+// i18n
+const i18n={
+  zh:{t:'🌍 地球知识村',s:'人文+地理+设计+经济+历史+哲学+商业+军事+政治+太空星际文明科幻，全球视野新三观'},
+  en:{t:'🌍 Earth Knowledge Village',s:'Humanities + Geography + Design + Economics + History + Philosophy + Business + Military + Politics + Cosmic Civilization Sci-Fi — A New Global Perspective'},
+  es:{t:'🌍 Aldea del Conocimiento Terrestre',s:'Humanidades + Geografía + Diseño + Economía + Historia + Filosofía + Negocios + Militar + Política + Civilización Cósmica — Nueva Perspectiva Global'},
+  fr:{t:'🌍 Village du Savoir Terrestre',s:'Humanités + Géographie + Design + Économie + Histoire + Philosophie + Commerce + Militaire + Politique + Civilisation Cosmique — Nouvelle Perspective Globale'},
+  ru:{t:'🌍 Деревня Земных Знаний',s:'Гуманитарные науки + География + Дизайн + Экономика + История + Философия + Бизнес + Военное дело + Политика + Космическая цивилизация'},
+  ar:{t:'🌍 قرية المعرفة الأرضية',s:'إنسانيات + جغرافيا + تصميم + اقتصاد + تاريخ + فلسفة + أعمال + عسكري + سياسة + حضارة كونية — رؤية عالمية جديدة'},
+};
+function setLang(l){
+  document.querySelectorAll('.lang-sw button').forEach(b=>b.classList.toggle('on',b.textContent.trim()==={zh:'中',en:'EN',es:'ES',fr:'FR',ru:'RU',ar:'AR'}[l]));
+  if(i18n[l]){document.querySelector('.hero-t').textContent=i18n[l].t;document.querySelector('.hero-s').textContent=i18n[l].s}
+  document.documentElement.lang=l==='zh'?'zh':l;
+}
+
+// Scroll reveal
+const revObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.sec,.cd,.alloc-i,.her-c,.qg-item,.tl-i').forEach(el=>{el.classList.add('reveal');revObs.observe(el)});
+</script>
+</body>
+</html>
